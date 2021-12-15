@@ -1,0 +1,27 @@
+﻿@model WebProje2.Models.Siniflar.FaturaKalem
+
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2 style="color:darkred"> Faturaya Ürün Ekleme İşlemleri </h2>
+<form class="form-group" method="post">
+    <p style="color:green">Açıklama</p>
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    <p style="color:green">Miktar </p>
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+    <br />
+    <p style="color:green">Birim Fiyat </p>
+    @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control" })
+    <br />
+    <p style="color:green">Toplam Tutar </p>
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+    <br />
+    <p style="color:green">Fatura ID</p>
+    @Html.TextBoxFor(x => x.Faturalarid, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Fatura Ekle</button>
+</form>
+ 

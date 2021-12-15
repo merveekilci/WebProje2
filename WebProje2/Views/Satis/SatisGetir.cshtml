@@ -1,0 +1,41 @@
+﻿@model WebProje2.Models.Siniflar.SatisHareket
+
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Satış İşlemi Güncelleme İşlemleri</h2>
+<br />
+
+@using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Satisid)
+    <p>Ürün Adı</p>
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    <p>Ürün Markası</p>
+    @Html.TextBoxFor(x=>x.Urun.Marka, new { @class = "form-control" })
+    <br />
+    <p>Cari(Müşteri)</p>
+    @Html.DropDownListFor(x => x.CarilerID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    <br />
+    <p>Personel (Satış Yapan)</p>
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    <br />
+    <p>Ürün Adedi</p>
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+    <p>Birim Fiyatı</p>
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    <p>Toplam Tutar</p>
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    <br />
+    <p>Satış Tarihi</p>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Satış Bilgilerini Güncelle</button>
+}
+

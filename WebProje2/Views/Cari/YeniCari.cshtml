@@ -1,0 +1,27 @@
+﻿@model WebProje2.Models.Siniflar.Cariler 
+
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2 style="color:darkgreen">Yeni Cari Ekleme İşlemleri</h2>
+<br />
+
+<form class="form-group" method="post">
+    <p style="color:darkred">Cari Adı </p>
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    <br />
+    <p style="color:darkred">Cari Soyadı </p>
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    <br />
+    <p style="color:darkred">Şehir </p>
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+    <p style="color:darkred">Cari Mail Adresi </p>
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Cari Kaydet</button>
+</form>
+
