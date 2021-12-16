@@ -215,4 +215,4 @@ D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel
 D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\CariBilgilerim.cshtml.g.cs
 D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\Duyurular.cshtml.g.cs
 D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\Error\PageError.cshtml.g.cs
-D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\Fatura\Dinamik.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\YetkisizIslem\Index.cshtml.g.cs

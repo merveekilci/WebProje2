@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -68,13 +69,15 @@ namespace WebProje2.Controllers
         public async Task<IActionResult> AdminLogin(Admin p)
         {
             var datavalue = c.Admins.FirstOrDefault(x => x.KullaniciAd == p.KullaniciAd && x.Sifre == p.Sifre);
+            
             if (datavalue != null)
-            {
+            {             
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name,p.KullaniciAd)
+                    new Claim(ClaimTypes.Name,p.KullaniciAd),
+                    new Claim(ClaimTypes.Role,datavalue.Yetki)
                 };
-                var userIdentity = new ClaimsIdentity(claims, "nt");
+                var userIdentity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                 await HttpContext.SignInAsync(principal);
                 return RedirectToAction("Index", "Kategori");
