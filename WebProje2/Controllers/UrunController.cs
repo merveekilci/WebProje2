@@ -16,7 +16,7 @@ namespace WebProje2.Controllers
         Context c = new Context();
         public ActionResult Index(string search)
         {
-            var urunlerr = from x in c.Uruns.Include(x=>x.Kategori) select x;
+            var urunlerr = from x in c.Uruns.Include(x=>x.Kategori).Where(x=>x.Durum==true) select x;
             if (!string.IsNullOrEmpty(search))
             {
                 urunlerr = urunlerr.Where(y => y.UrunAd.Contains(search));
@@ -42,17 +42,36 @@ namespace WebProje2.Controllers
             {
                 return View("YeniUrun");
             }
-            c.Uruns.Add(p);
-            c.SaveChanges();
+            try
+            {
+                c.Uruns.Add(p);
+                c.SaveChanges();
+                TempData["added"] = "Ürün Başarıyla Eklendi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
 
-            return RedirectToAction("Index");
+                throw;
+            }
+
         }
         public ActionResult UrunSil(int id)
         {
-            var deger = c.Uruns.Find(id);
-            deger.Durum = false;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var deger = c.Uruns.Find(id);
+                deger.Durum = false;
+                c.SaveChanges();
+                TempData["deleted"] = "Ürün Pasif hale getirildi!";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
         public ActionResult UrunGetir(int id)
         {
@@ -72,17 +91,27 @@ namespace WebProje2.Controllers
             {
                 return View("UrunGetir");
             }
-            var urn = c.Uruns.Find(p.UrunID);
-            urn.AlisFiyat = p.AlisFiyat;
-            urn.Durum = p.Durum;
-            urn.Kategoriid = p.Kategoriid;
-            urn.Marka = p.Marka;
-            urn.SatisFiyat = p.SatisFiyat;
-            urn.Stok = p.Stok;
-            urn.UrunAd = p.UrunAd;
-            urn.UrunGorsel = p.UrunGorsel;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var urn = c.Uruns.Find(p.UrunID);
+                urn.AlisFiyat = p.AlisFiyat;
+                urn.Durum = p.Durum;
+                urn.Kategoriid = p.Kategoriid;
+                urn.Marka = p.Marka;
+                urn.SatisFiyat = p.SatisFiyat;
+                urn.Stok = p.Stok;
+                urn.UrunAd = p.UrunAd;
+                urn.UrunGorsel = p.UrunGorsel;
+                c.SaveChanges();
+                TempData["updated"] = "Ürün bilgileri başarıyla güncellendi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
         public ActionResult UrunListesi()
         {

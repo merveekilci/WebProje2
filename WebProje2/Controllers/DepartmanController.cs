@@ -31,17 +31,36 @@ namespace WebProje2.Controllers
             {
                 return View("DepartmanEkle");
             }
-            c.Departmans.Add(d);
-            d.Durum = true;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                c.Departmans.Add(d);
+                d.Durum = true;
+                c.SaveChanges();
+                TempData["added"] = "Departman Başarıyla eklendi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
         public ActionResult DepartmanSil(int id)
         {
-            var dep = c.Departmans.Find(id);
-            dep.Durum = false;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var dep = c.Departmans.Find(id);
+                dep.Durum = false;
+                c.SaveChanges();
+                TempData["deleted"] = "Departman Başarıyla Silindi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
         }
         public ActionResult DepartmanGetir(int id)
         {
@@ -54,10 +73,20 @@ namespace WebProje2.Controllers
             {
                 return View("DepartmanGetir");
             }
-            var dpt = c.Departmans.Find(p.Departmanid);
-            dpt.DepartmanAd = p.DepartmanAd;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var dpt = c.Departmans.Find(p.Departmanid);
+                dpt.DepartmanAd = p.DepartmanAd;
+                c.SaveChanges();
+                TempData["updated"] = "Departman Başarıyla Güncellendi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
         }
         public ActionResult DepartmanDetay(int id)
         {

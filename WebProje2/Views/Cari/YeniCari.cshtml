@@ -28,6 +28,10 @@
     @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.CariMail, "", new { @style = "color:red" })
     <br />
+    <p style="color:darkred">Cari Şifresi </p>
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Sifre, "", new { @style = "color:red" })
+    <br />
     <button class="btn btn-info">Cari Kaydet</button>
 </form>
 

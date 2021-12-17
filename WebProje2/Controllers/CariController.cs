@@ -29,17 +29,37 @@ namespace WebProje2.Controllers
             {
                 return View("YeniCari");
             }
-            p.Durum = true;
-            c.Carilers.Add(p);
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                p.Durum = true;
+                c.Carilers.Add(p);
+                c.SaveChanges();
+                TempData["added"] = "Cari Başarıyla Oluşturuldu.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
         public ActionResult CariSil(int id)
         {
-            var cari = c.Carilers.Find(id);
-            cari.Durum = false;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var cari = c.Carilers.Find(id);
+                cari.Durum = false;
+                c.SaveChanges();
+                TempData["deleted"] = "Cari Başarıyla Silindi!";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
         public ActionResult CariGetir(int id)
         {
@@ -52,13 +72,23 @@ namespace WebProje2.Controllers
             {
                 return View("CariGetir");
             }
-            var cari = c.Carilers.Find(p.CarilerID);
-            cari.CariAd = p.CariAd;
-            cari.CariSoyad = p.CariSoyad;
-            cari.CariSehir = p.CariSehir;
-            cari.CariMail = p.CariMail;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var cari = c.Carilers.Find(p.CarilerID);
+                cari.CariAd = p.CariAd;
+                cari.CariSoyad = p.CariSoyad;
+                cari.CariSehir = p.CariSehir;
+                cari.CariMail = p.CariMail;
+                cari.Sifre = p.Sifre;
+                c.SaveChanges();
+                TempData["updated"] = "Cari bilgileri başarıyla güncellendi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
         public IActionResult MusteriSatis(int id)
         {

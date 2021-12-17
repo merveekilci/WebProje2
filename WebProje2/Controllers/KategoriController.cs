@@ -32,17 +32,37 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             {
                 return View("KategoriEkle");
             }
-            c.Kategoris.Add(yeniKategori);
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                c.Kategoris.Add(yeniKategori);
+                c.SaveChanges();
+                TempData["added"] = "Kategori Başarıyla Eklendi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+ 
 
         }
         public ActionResult KategoriSil(int id)
         {
-            var ktg = c.Kategoris.Find(id);
-            c.Kategoris.Remove(ktg);
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var ktg = c.Kategoris.Find(id);
+                c.Kategoris.Remove(ktg);
+                c.SaveChanges();
+                TempData["deleted"] = "Kategori Başarıyla Silindi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
         public ActionResult KategoriGetir(int id)
         {
@@ -55,10 +75,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             {
                 return View("KategoriGetir");
             }
-            var ktgr = c.Kategoris.Find(k.KategoriID);
-            ktgr.KategoriAd = k.KategoriAd;
-            c.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                var ktgr = c.Kategoris.Find(k.KategoriID);
+                ktgr.KategoriAd = k.KategoriAd;
+                c.SaveChanges();
+                TempData["updated"] = "Kategori Başarıyla Güncellendi.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }
