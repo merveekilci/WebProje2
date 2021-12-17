@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Web;
 using WebProje2.Models.Siniflar;
 namespace WebProje2.Controllers
 {
+    [Authorize(Roles = "A,B")]
     public class FaturaController : Controller
     {
         Context c = new Context();

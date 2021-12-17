@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,8 +7,10 @@ using System.Threading.Tasks;
 using WebProje2.Models.Siniflar;
 namespace WebProje2.Controllers
 {
+    [Authorize(Roles = "A,B")]
     public class UrunDetayController : Controller
     {
+
         Context c = new Context();
         public IActionResult Index()
         {

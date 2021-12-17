@@ -9,11 +9,12 @@ using X.PagedList;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize(Roles = "A,B")]
     public class KategoriController : Controller
     {
         // GET: Kategori
         Context c = new Context();
-        [Authorize(Roles = "A")]
+        
         public ActionResult Index(int sayfa = 1)
         {
             var degerler = c.Kategoris.ToList().ToPagedList(sayfa, 5);

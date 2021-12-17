@@ -9,6 +9,7 @@ using WebProje2.Models.Siniflar;
 
 namespace WebProje2.Controllers
 {
+    [Authorize(Roles = "A,B")]
     public class DepartmanController : Controller
     {
         // GET: Departman
@@ -18,7 +19,6 @@ namespace WebProje2.Controllers
             var degerler = c.Departmans.Where(x => x.Durum == true).ToList();
             return View(degerler);
         }
-        [Authorize(Roles ="A")]
         [HttpGet]
         public ActionResult DepartmanEkle()
         {
