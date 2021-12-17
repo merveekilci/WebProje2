@@ -39,6 +39,10 @@ namespace WebProje2.Controllers
         [HttpPost]
         public ActionResult KargoEkle(KargoDetay d)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("KargoEkle");
+            }
             c.KargoDetays.Add(d);
             c.SaveChanges();
             return RedirectToAction("Index");

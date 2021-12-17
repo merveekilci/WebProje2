@@ -33,6 +33,10 @@ namespace WebProje2.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(AddProfileImage t)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("PersonelEkle");
+            }
             Personel p = new Personel();
             if (t.PersonelGorsel !=null)
             {
@@ -65,6 +69,10 @@ namespace WebProje2.Controllers
         public ActionResult PersonelGuncelle(AddProfileImage t)
         {
 
+            if (!ModelState.IsValid)
+            {
+                return View("PersonelGetir");
+            }
             Personel p = new Personel();
             if (t.PersonelGorsel != null)
             {

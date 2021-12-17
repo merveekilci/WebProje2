@@ -12,7 +12,8 @@ namespace WebProje2.Models.Siniflar
         [Key]
         public int KategoriID { get; set; }
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30, ErrorMessage = "Kategori Adı En fazla 30 karakter uzunluğunda olabilir.")]
+        [Required(ErrorMessage = "Kategori Ad alanı boş geçilemez !")]
         public string KategoriAd { get; set; }
         public ICollection<Urun> Uruns { get; set; }
 

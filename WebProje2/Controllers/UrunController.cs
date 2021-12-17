@@ -23,7 +23,7 @@ namespace WebProje2.Controllers
         }
         [HttpGet]
         public ActionResult YeniUrun()
-        {
+        {  
             List<SelectListItem> deger1 = (from x in c.Kategoris.ToList()
                                            select new SelectListItem
                                            {
@@ -36,6 +36,10 @@ namespace WebProje2.Controllers
         [HttpPost]
         public ActionResult YeniUrun(Urun p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniUrun");
+            }
             c.Uruns.Add(p);
             c.SaveChanges();
 
@@ -62,6 +66,10 @@ namespace WebProje2.Controllers
         }
         public ActionResult UrunGuncelle(Urun p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UrunGetir");
+            }
             var urn = c.Uruns.Find(p.UrunID);
             urn.AlisFiyat = p.AlisFiyat;
             urn.Durum = p.Durum;

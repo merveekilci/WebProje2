@@ -14,9 +14,12 @@
     @Html.HiddenFor(x => x.PersonelID)
     <p>Personel Adı</p>
     @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelAd, "", new { @style = "color:red" })
+
     <p></p>
     <p>Personel Soyadı</p>
     @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelSoyad, "", new { @style = "color:red" })
     <p></p>
     <p>Personel Görseli</p>
     <input type="file" name="PersonelGorsel" />

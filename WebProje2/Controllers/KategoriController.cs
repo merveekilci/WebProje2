@@ -13,10 +13,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: Kategori
         Context c = new Context();
-        [Authorize(Roles ="A")]
-        public ActionResult Index(int sayfa=1)
+        [Authorize(Roles = "A")]
+        public ActionResult Index(int sayfa = 1)
         {
-            var degerler = c.Kategoris.ToList().ToPagedList(sayfa,5);
+            var degerler = c.Kategoris.ToList().ToPagedList(sayfa, 5);
             return View(degerler);
         }
         [HttpGet]
@@ -27,9 +27,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult KategoriEkle(Kategori yeniKategori)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("KategoriEkle");
+            }
             c.Kategoris.Add(yeniKategori);
             c.SaveChanges();
             return RedirectToAction("Index");
+
         }
         public ActionResult KategoriSil(int id)
         {
@@ -45,6 +50,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult KategoriGuncelle(Kategori k)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("KategoriGetir");
+            }
             var ktgr = c.Kategoris.Find(k.KategoriID);
             ktgr.KategoriAd = k.KategoriAd;
             c.SaveChanges();

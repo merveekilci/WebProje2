@@ -10,10 +10,10 @@ namespace WebProje2.Controllers
     public class CariController : Controller
     {
         Context c = new Context();
-        public ActionResult Index()
+        public IActionResult Index()
         {
-            var degerler = c.Carilers.Where(x=>x.Durum==true).ToList();
-            return View(degerler);
+            var deger = c.Carilers.Where(x => x.Durum == true).ToList();
+            return View(deger);
         }
         [HttpGet]
         public ActionResult YeniCari()
@@ -23,6 +23,10 @@ namespace WebProje2.Controllers
         [HttpPost]
         public ActionResult YeniCari(Cariler p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniCari");
+            }
             p.Durum = true;
             c.Carilers.Add(p);
             c.SaveChanges();

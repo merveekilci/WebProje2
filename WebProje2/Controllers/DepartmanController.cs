@@ -27,6 +27,10 @@ namespace WebProje2.Controllers
         [HttpPost]
         public ActionResult DepartmanEkle(Departman d)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("DepartmanEkle");
+            }
             c.Departmans.Add(d);
             d.Durum = true;
             c.SaveChanges();
@@ -46,6 +50,10 @@ namespace WebProje2.Controllers
         }
         public ActionResult DepartmanGuncelle(Departman p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("DepartmanGetir");
+            }
             var dpt = c.Departmans.Find(p.Departmanid);
             dpt.DepartmanAd = p.DepartmanAd;
             c.SaveChanges();

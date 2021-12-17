@@ -11,6 +11,7 @@
 <form class="form-group" method="post">
     <p style="color:green">Departman Adı </p>
     @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.DepartmanAd,"",new { @style ="color:red"})
     <br />
     <button class="btn btn-info">Kaydet</button>
 </form>
