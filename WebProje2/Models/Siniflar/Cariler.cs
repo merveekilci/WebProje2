@@ -29,8 +29,12 @@ namespace WebProje2.Models.Siniflar
         public string CariMail { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(20, ErrorMessage = "Şifre en fazla 20 karakter uzunluğunda olabilir.")]
-        [Required(ErrorMessage = "Şifre alanı boş geçilemez !")]
+        [Required(ErrorMessage = "Şifre alanı boş geçilemez !")]       
         public string Sifre { get; set; }
+        [Column(TypeName = "Varchar")]
+        [StringLength(9, ErrorMessage = "Dil en fazla 9 karakter uzunluğunda olabilir.")]
+        [Required(ErrorMessage = "Dil alanı boş geçilemez !")]
+        public string Dil { get; set; }
         public bool Durum { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }
 

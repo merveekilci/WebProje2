@@ -216,3 +216,15 @@ D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel
 D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\Duyurular.cshtml.g.cs
 D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\Error\PageError.cshtml.g.cs
 D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\YetkisizIslem\Index.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\Mesaj\son.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\Shared\_CariLayoutEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\IndexEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\KargoTakipEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\KargoDetayEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\SiparislerimEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\GelenMesajlarEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\GidenMesajlarEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\MesajDetayEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\DuyurularEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\CariBilgilerimEN.cshtml.g.cs
+D:\pc2\WebProgramlama\WebProje2\WebProje2\obj\Debug\net5.0\Razor\Views\CariPanel\YeniMesajEN.cshtml.g.cs

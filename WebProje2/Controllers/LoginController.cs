@@ -52,7 +52,14 @@ namespace WebProje2.Controllers
                 var userIdentity = new ClaimsIdentity(claims, "a");
                 ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                 await HttpContext.SignInAsync(principal);
-                return RedirectToAction("Index", "CariPanel");
+                if (datavalue.Dil == "Türkçe") 
+                {
+                    return RedirectToAction("Index", "CariPanel");
+                }
+                else
+                {
+                    return RedirectToAction("IndexEN", "CariPanel");
+                }
             }
             else
             {

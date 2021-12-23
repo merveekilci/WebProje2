@@ -17,6 +17,7 @@ namespace WebProje2.Controllers
             var deger = c.Carilers.Where(x => x.Durum == true).ToList();
             return View(deger);
         }
+
         [HttpGet]
         public ActionResult YeniCari()
         {

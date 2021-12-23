@@ -1,8 +1,7 @@
 ﻿@model WebProje2.Models.Siniflar.Mesajlar
-
 @{
-    ViewData["Title"] = "YeniMesaj";
-    Layout = "~/Views/Shared/_CariLayout.cshtml";
+    ViewData["Title"] = "YeniMesajEN";
+    Layout = "~/Views/Shared/_CariLayoutEN.cshtml";
 }
 
 <!DOCTYPE html>
@@ -59,7 +58,7 @@
 
                 <div class="col-sm-6">
 
-                    <h1>Yeni Mesaj Oluştur</h1>
+                    <h1>Create New Message</h1>
 
                 </div>
 
@@ -81,13 +80,13 @@
 
                 <div class="col-md-3">
 
-                    <a href="/CariPanel/GelenMesajlar/" class="btn btn-primary btn-block mb-3">Gelen Kutusuna Dön</a>
+                    <a href="/CariPanel/GelenMesajlarEN/" class="btn btn-primary btn-block mb-3">Return to Inbox</a>
 
                     <div class="card">
 
                         <div class="card-header">
 
-                            <h3 class="card-title">Klasörler</h3>
+                            <h3 class="card-title">Folders</h3>
 
                             <div class="card-tools">
 
@@ -107,9 +106,9 @@
 
                                 <li class="nav-item active">
 
-                                    <a href="/CariPanel/GelenMesajlar/" class="nav-link">
+                                    <a href="/CariPanel/GelenMesajlarEN/" class="nav-link">
 
-                                        <i class="fas fa-inbox"></i> Gelen Kutusu
+                                        <i class="fas fa-inbox"></i> Inbox
 
                                         <span class="badge bg-primary float-right">@ViewBag.gelenSayisi</span>
 
@@ -119,9 +118,9 @@
 
                                 <li class="nav-item">
 
-                                    <a href="/CariPanel/GidenMesajlar/" class="nav-link">
+                                    <a href="/CariPanel/GidenMesajlarEN/" class="nav-link">
 
-                                        <i class="far fa-envelope"></i> Giden Kutusu
+                                        <i class="far fa-envelope"></i> Outbox
                                         <span class="badge bg-gradient-red float-right">@ViewBag.gidenSayisi</span>
 
                                     </a>
@@ -132,7 +131,7 @@
 
                                     <a href="#" class="nav-link">
 
-                                        <i class="far fa-file-alt"></i> Taslaklar
+                                        <i class="far fa-file-alt"></i> Drafts
 
                                     </a>
 
@@ -142,7 +141,7 @@
 
                                     <a href="#" class="nav-link">
 
-                                        <i class="fas fa-filter"></i> Spamlar
+                                        <i class="fas fa-filter"></i> Spam
 
                                         <span class="badge bg-warning float-right">65</span>
 
@@ -154,7 +153,7 @@
 
                                     <a href="#" class="nav-link">
 
-                                        <i class="far fa-trash-alt"></i> Çöp Kutusu
+                                        <i class="far fa-trash-alt"></i> Trash bin
 
                                     </a>
 
@@ -174,7 +173,7 @@
 
                         <div class="card-header">
 
-                            <h3 class="card-title">Filtreler</h3>
+                            <h3 class="card-title">Filters</h3>
 
                             <div class="card-tools">
 
@@ -198,7 +197,7 @@
 
                                         <i class="far fa-circle text-danger"></i>
 
-                                        Önemli
+                                        Important
 
                                     </a>
 
@@ -208,7 +207,7 @@
 
                                     <a href="#" class="nav-link">
 
-                                        <i class="far fa-circle text-warning"></i> Promosyonlar
+                                        <i class="far fa-circle text-warning"></i> Promotions
 
                                     </a>
 
@@ -220,7 +219,7 @@
 
                                         <i class="far fa-circle text-primary"></i>
 
-                                        Sosyal
+                                        Social
 
                                     </a>
 
@@ -257,19 +256,19 @@
 
                                     <div class="form-group">
 
-                                        <input class="form-control" placeholder="Kime:" name="Alici">
+                                        <input class="form-control" placeholder="Receiver:" name="Alici">
 
                                     </div>
 
                                     <div class="form-group">
 
-                                        <input class="form-control" placeholder="Konu:" name="Konu">
+                                        <input class="form-control" placeholder="Subject:" name="Konu">
 
                                     </div>
 
                                     <div class="form-group">
 
-                                        <textarea id="compose-textarea" class="form-control" style="height: 300px" name="Icerik">Merhaba burası testa lanı.
+                                        <textarea id="compose-textarea" class="form-control" style="height: 300px" name="Icerik">You can write here...
                                  </textarea>
 
                                     </div>
@@ -278,24 +277,21 @@
 
                                     <div class="float-right">
 
-                                        <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Taslak</button>
+                                        <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Draft</button>
                                     </div>
 
-                                    <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> İptal Et</button>
-                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                    <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> Drop</button>
+                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
 
                                 </div>
 
                             </form>
-                            @if (TempData["sended"]!=null)
+                            @if (TempData["sended"] != null) 
                             {
                                 <p style="color:darkgreen">@TempData["sended"]</p>
                             }
 
                             <!-- /.card-body -->
-
-                           
-
                             <!-- /.card-footer -->
 
                         </div>

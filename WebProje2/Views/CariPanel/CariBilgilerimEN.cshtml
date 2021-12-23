@@ -1,7 +1,7 @@
 ﻿@model WebProje2.Models.Siniflar.Cariler
 @{
-    ViewData["Title"] = "CariBilgilerim";
-    Layout = "~/Views/Shared/_CariLayout.cshtml";
+    ViewData["Title"] = "CariBilgilerimEN";
+    Layout = "~/Views/Shared/_CariLayoutEN.cshtml";
 }
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>ZEC V1.0.3 | Profilim</title>
+    <title>ZEC V1.0.3 | My Profile</title>
 
     <!-- Tell the browser to be responsive to screen width -->
 
@@ -100,25 +100,25 @@
 
                                     <li class="list-group-item">
 
-                                        <b>Toplam Satış :</b> <a class="float-right">@ViewBag.d1</a>
+                                        <b>Total piece of products :</b> <a class="float-right">@ViewBag.d1</a>
 
                                     </li>
 
                                     <li class="list-group-item">
 
-                                        <b>Toplam Satış Tutarı :</b> <a class="float-right" style="color:darkgreen">@ViewBag.d2 ₺</a>
+                                        <b>Amount of products:</b> <a class="float-right" style="color:darkgreen">@ViewBag.d2 ₺</a>
 
                                     </li>
 
                                     <li class="list-group-item">
 
-                                        <b>Toplam Ürün Sayısı :</b> <a class="float-right">@ViewBag.d3 Adet</a>
+                                        <b>Total Product :</b> <a class="float-right">@ViewBag.d3 Piece</a>
 
                                     </li>
 
                                 </ul>
 
-                                <a href="/CariPanel/KargoTakip/" class="btn btn-primary btn-block"><b>Kargo Takip</b></a>
+                                <a href="/CariPanel/KargoTakipEN/" class="btn btn-primary btn-block"><b>Shipping Track</b></a>
 
                             </div>
 
@@ -133,14 +133,14 @@
 
                             <div class="card-header">
 
-                                <h3 class="card-title">Hakkımda</h3>
+                                <h3 class="card-title">About Me</h3>
 
                             </div>
 
                             <!-- /.card-header -->
                             <div class="card-body">
 
-                                <strong><i class="fas fa-book mr-1"></i> Veri Dairesi</strong>
+                                <strong><i class="fas fa-book mr-1"></i> Tax Office</strong>
 
                                 <p class="text-muted">
 
@@ -150,13 +150,13 @@
 
                                 <hr>
 
-                                <strong><i class="fas fa-map-marker-alt mr-1"></i>Şehir</strong>
+                                <strong><i class="fas fa-map-marker-alt mr-1"></i>Country</strong>
 
                                 <p class="text-muted">@ViewBag.d5</p>
                                 <hr>
-                                <strong><i class="far fa-file-alt mr-1"></i> Versiyon Bilgileri</strong>
+                                <strong><i class="far fa-file-alt mr-1"></i> Version Info</strong>
 
-                                <p class="text-muted" style="color:red">V1.0.3 Cari Yönetim Sistemi</p>
+                                <p class="text-muted" style="color:red">V1.0.3 Customer Management System</p>
 
                             </div>
 
@@ -178,11 +178,11 @@
 
                                 <ul class="nav nav-pills">
 
-                                    <li class="nav-item"><a class="nav-link" href="/CariPanel/Index/">Mesajlar</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/CariPanel/IndexEN/">Messages</a></li>
 
-                                    <li class="nav-item"><a class="nav-link" href="/CariPanel/Duyurular/">Duyurular</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/CariPanel/DuyurularEN/">Annoucements</a></li>
 
-                                    <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab" >Kullanıcı Ayarları</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">User Settings</a></li>
 
                                 </ul>
 
@@ -199,19 +199,19 @@
 
                                     </div>
 
-      
+
                                     <div class="card-body">
 
                                         <div class="tab-content">
 
                                             <div class="active tab-pane" id="settings">
-                                                @using (Html.BeginForm("BilgilerimiGuncelle", "CariPanel", FormMethod.Post))
+                                                @using (Html.BeginForm("BilgilerimiGuncelleEN", "CariPanel", FormMethod.Post))
                                                 {
                                                 <form class="form-horizontal">
                                                     @Html.HiddenFor(x => x.CarilerID)
                                                     <div class="form-group row">
 
-                                                        <label for="inputName" class="col-sm-2 col-form-label">Adınız</label>
+                                                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
 
                                                         <div class="col-sm-10">
                                                             @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
@@ -220,7 +220,7 @@
                                                     </div>
                                                     <div class="form-group row">
 
-                                                        <label for="inputName" class="col-sm-2 col-form-label">Soyadınız</label>
+                                                        <label for="inputName" class="col-sm-2 col-form-label">Surname</label>
 
                                                         <div class="col-sm-10">
                                                             @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
@@ -242,7 +242,7 @@
 
                                                     <div class="form-group row">
 
-                                                        <label for="inputName2" class="col-sm-2 col-form-label">Şehir</label>
+                                                        <label for="inputName2" class="col-sm-2 col-form-label">Country</label>
 
                                                         <div class="col-sm-10">
 
@@ -254,7 +254,7 @@
 
                                                     <div class="form-group row">
 
-                                                        <label for="inputExperience" class="col-sm-2 col-form-label">Şifreniz</label>
+                                                        <label for="inputExperience" class="col-sm-2 col-form-label">Password</label>
 
                                                         <div class="col-sm-10">
                                                             @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
@@ -265,7 +265,7 @@
                                                     </div>
                                                     <div class="form-group row">
 
-                                                        <label for="inputExperience" class="col-sm-2 col-form-label">Dil</label>
+                                                        <label for="inputExperience" class="col-sm-2 col-form-label">Language</label>
 
                                                         <div class="col-sm-10">
                                                             @Html.TextBoxFor(x => x.Dil, new { @class = "form-control" })
@@ -275,6 +275,7 @@
 
                                                     </div>
 
+
                                                     <div class="form-group row">
 
                                                         <div class="offset-sm-2 col-sm-10">
@@ -283,7 +284,7 @@
 
                                                                 <label>
 
-                                                                    <input type="checkbox"> Kullanıcı Bilgilerimi not ettim, <a href="#">Yaptığım değişikliği onaylıyorum.</a>
+                                                                    <input type="checkbox">I took note for my information, <a href="#">I accept the changes.</a>
 
                                                                 </label>
 
@@ -297,7 +298,7 @@
 
                                                         <div class="offset-sm-2 col-sm-10">
 
-                                                            <button type="submit" class="btn btn-danger">Bilgilerimi Güncelle</button>
+                                                            <button type="submit" class="btn btn-danger">Update My Information</button>
 
                                                         </div>
 
@@ -316,17 +317,17 @@
 
                                 </div>
 
-                        <!-- /.nav-tabs-custom -->
+                                <!-- /.nav-tabs-custom -->
 
-                    </div>
+                            </div>
 
-                    <!-- /.col -->
+                            <!-- /.col -->
 
-                </div>
+                        </div>
 
-                <!-- /.row -->
+                        <!-- /.row -->
 
-            </div><!-- /.container-fluid -->
+                    </div><!-- /.container-fluid -->
 
         </section>
 
@@ -335,8 +336,6 @@
     </div>
 
     <!-- /.content-wrapper -->
-
-
     <!-- Control Sidebar -->
 
     <aside class="control-sidebar control-sidebar-dark">
