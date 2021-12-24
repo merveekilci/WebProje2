@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using WebProje2.Models.Siniflar;
 
 namespace WebProje2.Controllers
@@ -30,6 +31,12 @@ namespace WebProje2.Controllers
             ViewBag.d4 = adsoyad;
             var sehir = c.Carilers.Where(x => x.CarilerID == mailid).Select(y => y.CariSehir).FirstOrDefault();
             ViewBag.d5 = sehir;
+            string api = "9d3320c73686303f5299eae51ad9435f";
+            string connection = "http://api.openweathermap.org/data/2.5/weather?q="+ sehir + "&mode=xml&lang=tr&units=metric&appid=" + api;
+            XDocument document = XDocument.Load(connection);
+            ViewBag.d6 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
+            ViewBag.d7 = document.Descendants("weather").ElementAt(0).Attribute("value").Value;
+            ViewBag.d8 = document.Descendants("lastupdate").ElementAt(0).Attribute("value").Value;
             return View(degerler);
         }
         [Authorize]
@@ -47,6 +54,12 @@ namespace WebProje2.Controllers
             ViewBag.d4 = adsoyad;
             var sehir = c.Carilers.Where(x => x.CarilerID == mailid).Select(y => y.CariSehir).FirstOrDefault();
             ViewBag.d5 = sehir;
+            string api = "9d3320c73686303f5299eae51ad9435f";
+            string connection = "http://api.openweathermap.org/data/2.5/weather?q=" + sehir + "&mode=xml&lang=en&units=metric&appid=" + api;
+            XDocument document = XDocument.Load(connection);
+            ViewBag.d6 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
+            ViewBag.d7 = document.Descendants("weather").ElementAt(0).Attribute("value").Value;
+            ViewBag.d8 = document.Descendants("lastupdate").ElementAt(0).Attribute("value").Value;
             return View(degerler);
         }
         [Authorize]
