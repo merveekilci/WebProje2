@@ -15,19 +15,5 @@ namespace WebProje2.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> son()
-        {
-            ApiSon reservationList = new ApiSon();
-            using (var httpClient = new HttpClient())
-            {
-                using (var response = await httpClient.GetAsync("https://api.genelpara.com/embed/doviz.json"))
-                {
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    reservationList = JsonConvert.DeserializeObject<ApiSon>(apiResponse.ToString());
-                }
-            }
-            return View(reservationList);
-        }
-
     }
 }
