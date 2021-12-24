@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace WebProje2.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(9, ErrorMessage = "Dil en fazla 9 karakter uzunluğunda olabilir.")]
         [Required(ErrorMessage = "Dil alanı boş geçilemez !")]
+        [DefaultValue("Türkçe")]
         public string Dil { get; set; }
         public bool Durum { get; set; }
         public ICollection<SatisHareket> SatisHarekets { get; set; }

@@ -29,6 +29,7 @@ namespace WebProje2.Controllers
         [HttpPost]
         public IActionResult KayitOl(Cariler p)
         {
+            p.Dil = "Türkçe";
             c.Carilers.Add(p);
             c.SaveChanges();
             return RedirectToAction("CariGiris","Login");
