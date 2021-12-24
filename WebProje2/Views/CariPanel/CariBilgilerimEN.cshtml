@@ -267,9 +267,13 @@
 
                                                         <label for="inputExperience" class="col-sm-2 col-form-label">Language</label>
 
-                                                        <div class="col-sm-10">
-                                                            @Html.TextBoxFor(x => x.Dil, new { @class = "form-control" })
 
+
+                                                        <div class="col-sm-10">
+                                                            <input type="radio" id="Dil" name="Dil" value="Türkçe">
+                                                            <label for="Dil" style="color:black">Turkish</label><br />
+                                                            <input type="radio" id="Dil" name="Dil" value="İngilizce" checked>
+                                                            <label for="Dil" style="color:red">English</label><br>
 
                                                         </div>
 
@@ -284,7 +288,7 @@
 
                                                                 <label>
 
-                                                                    <input type="checkbox">I took note for my information, <a href="#">I accept the changes.</a>
+                                                                    <input type="checkbox" checked> I took note for my information, <a href="#">I accept the changes.</a>
 
                                                                 </label>
 
